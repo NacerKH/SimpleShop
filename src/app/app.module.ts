@@ -5,14 +5,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavBarComponent } from './layout/nav-bar/nav-bar.component';
 import { FooterComponent } from './layout/footer/footer.component';
-import { AppLayoutComponent } from './layout/app-layout/app-layout.component';
+import { ListProductsComponent } from './Pages/list-products/list-products.component';
+import { AddProductComponent } from './Pages/add-product/add-product.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     FooterComponent,
-    AppLayoutComponent
+    ListProductsComponent,
+    AddProductComponent,
+
   ],
   imports: [
     BrowserModule,
