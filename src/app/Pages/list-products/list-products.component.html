@@ -6,7 +6,8 @@
     <div class="card-body">
       <h5 class="card-title">{{p.name}}</h5>
       <p class="card-text">{{p.description}}</p>
-      <a href="#" class="btn btn-primary" (click)="addToCart(p)"  >Add </a>
+      <a  class="btn btn-primary" (click)="addToCart(p)"  >Add </a>
+      <a  class="btn btn-danger" (click)="counterLike(p)"  >like   </a> {{p.like}}
     </div>
   </div>
 </div>

@@ -9,6 +9,8 @@ import { ProductsServiceService } from 'src/app/services/products-service.servic
 })
 export class ListProductsComponent implements OnInit {
   productsList:Product[]=[]
+
+
   constructor(private _productservice:ProductsServiceService) { }
 
   ngOnInit(): void {
@@ -16,5 +18,10 @@ export class ListProductsComponent implements OnInit {
   }
   addToCart(product:Product){
     this._productservice.addToCart(product).subscribe(()=>{},()=>alert('Product already exist'))
+  }
+  counterLike(product:Product){
+    product.like++;
+    console.log(product)
+    this._productservice.updateProduct(product).subscribe(()=>alert('Product Update successffuly'))
   }
 }

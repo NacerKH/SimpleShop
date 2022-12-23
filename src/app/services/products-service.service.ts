@@ -24,7 +24,8 @@ export class ProductsServiceService {
   getProductById(id:number){
     return this.http.get<Product>(this.url+"/"+id)
   }
-
-
+ updateProduct(product:Product){
+  return this.http.put(this.url+"/"+product.id,product)
+}
 
 }
