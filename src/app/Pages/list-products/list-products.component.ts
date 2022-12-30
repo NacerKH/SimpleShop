@@ -24,4 +24,12 @@ export class ListProductsComponent implements OnInit {
     console.log(product)
     this._productservice.updateProduct(product).subscribe(()=>alert('Product Update successffuly'))
   }
+  removeProduct(product:Product){
+    this._productservice.deleteProduct(product).subscribe( ()=>  {
+
+      this._productservice.getProducts().subscribe((data)=>this.productsList=data)
+      setTimeout(()=> alert('Product Deleted successffuly') ,300)
+
+    })
+  }
 }
