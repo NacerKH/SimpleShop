@@ -1,16 +1,31 @@
 {
-  "products": [],
-  "cart": [
+  "products": [
     {
-      "name": "test",
-      "price": 10,
-      "description": "eeeeeeeeeee",
-      "id": 1
+      "name": "khalifamednaceur",
+      "price": 12,
+      "description": "description for test",
+      "id": 1,
+      "like": 1
     },
     {
-      "name": "product 2",
-      "price": 10,
-      "description": "aaaaaaaaaaaaa",
+      "name": "khalifamednaceur",
+      "price": 12,
+      "description": "description for test",
+      "id": 2
+    }
+  ],
+  "cart": [
+    {
+      "name": "khalifamednaceur",
+      "price": 12,
+      "description": "description for test",
+      "id": 1,
+      "like": 1
+    },
+    {
+      "name": "khalifamednaceur",
+      "price": 12,
+      "description": "description for test",
       "id": 2
     }
   ]

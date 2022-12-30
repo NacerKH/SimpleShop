@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/core/Product';
 import { ProductsServiceService } from 'src/app/services/products-service.service';
 
+import Swal from 'sweetalert2/dist/sweetalert2.js';
+
 @Component({
   selector: 'app-list-products',
   templateUrl: './list-products.component.html',
@@ -11,24 +13,24 @@ export class ListProductsComponent implements OnInit {
   productsList:Product[]=[]
 
 
-  constructor(private _productservice:ProductsServiceService) { }
+  constructor(private _productservice:ProductsServiceService ) { }
 
   ngOnInit(): void {
     this._productservice.getProducts().subscribe((data)=>this.productsList=data)
   }
   addToCart(product:Product){
-    this._productservice.addToCart(product).subscribe(()=>{},()=>alert('Product already exist'))
+    this._productservice.addToCart(product).subscribe(()=>Swal.fire('successfully!', 'Product  added  to cart successfully.', 'success'),()=>Swal.fire(' was Added!', 'Exist in Cart ', 'error'))
   }
   counterLike(product:Product){
     product.like++;
     console.log(product)
-    this._productservice.updateProduct(product).subscribe(()=>alert('Product Update successffuly'))
+    this._productservice.updateProduct(product).subscribe(()=>  Swal.fire('Cancelled!', 'Product updated successfully.', 'success'))
   }
   removeProduct(product:Product){
     this._productservice.deleteProduct(product).subscribe( ()=>  {
 
       this._productservice.getProducts().subscribe((data)=>this.productsList=data)
-      setTimeout(()=> alert('Product Deleted successffuly') ,300)
+     Swal.fire('Removed!', 'Product removed successfully.', 'success')
 
     })
   }
