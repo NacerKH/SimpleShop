@@ -10,7 +10,8 @@ import Swal from 'sweetalert2/dist/sweetalert2.js';
   styleUrls: ['./list-products.component.css']
 })
 export class ListProductsComponent implements OnInit {
-  productsList:Product[]=[]
+  productsList:Product[]=[];
+  like:number=0;
 
 
   constructor(private _productservice:ProductsServiceService ) { }
@@ -22,9 +23,17 @@ export class ListProductsComponent implements OnInit {
     this._productservice.addToCart(product).subscribe(()=>Swal.fire('successfully!', 'Product  added  to cart successfully.', 'success'),()=>Swal.fire(' was Added!', 'Exist in Cart ', 'error'))
   }
   counterLike(product:Product){
-    product.like++;
+
+if( product.like  != undefined || product.like != NaN) {
+  product.like++
+}else{
+
+  product.like =    this.like++
+}
+
+
     console.log(product)
-    this._productservice.updateProduct(product).subscribe(()=>  Swal.fire('Cancelled!', 'Product updated successfully.', 'success'))
+   return  this._productservice.updateProduct(product).subscribe(()=>  Swal.fire('Cancelled!', 'Product updated successfully.', 'success'))
   }
   removeProduct(product:Product){
     this._productservice.deleteProduct(product).subscribe( ()=>  {

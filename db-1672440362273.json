@@ -4,22 +4,14 @@
       "name": "khalifamednaceur",
       "price": 12,
       "description": "description for test",
-      "id": 2,
-      "like": 5
-    },
-    {
-      "name": "Ruth Blake",
-      "price": 1,
-      "description": "Nobis vero et ut dicta at alias. Illum quas et libero. Laborum eveniet quae omnis labore saepe dolor.",
-      "id": 3,
+      "id": 1,
       "like": 1
     },
     {
-      "name": "Jessica Bowen",
-      "price": 11,
-      "description": "Nobis vero et ut dicta at alias. Illum quas et libero. Laborum eveniet quae omnis labore saepe dolor.",
-      "id": 4,
-      "like": 3
+      "name": "khalifamednaceur",
+      "price": 12,
+      "description": "description for test",
+      "id": 2
     }
   ],
   "cart": [
