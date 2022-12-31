@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Product } from 'src/app/core/Product';
 import { ProductsServiceService } from 'src/app/services/products-service.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-product',
@@ -9,12 +11,18 @@ import { ProductsServiceService } from 'src/app/services/products-service.servic
 })
 export class AddProductComponent implements OnInit {
   product:Product=new Product();
-  constructor(private _serviceProduct: ProductsServiceService) { }
+  constructor(private _serviceProduct: ProductsServiceService,   private router: Router  ) { }
 
   ngOnInit(): void {
 
   }
   add(){
-    this._serviceProduct.addProduct(this.product).subscribe(()=>alert('Product Succefully added'))
+    this._serviceProduct.addProduct(this.product).subscribe(()=>{
+      this.router.navigate(['']),
+      Swal.fire('successfully!', 'Product  added   successfully.', 'success')
+
+    }
+
+)
   }
 }
